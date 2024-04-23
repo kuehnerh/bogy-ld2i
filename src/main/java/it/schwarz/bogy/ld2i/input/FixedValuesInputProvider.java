@@ -9,12 +9,12 @@ import java.math.BigDecimal;
 public class FixedValuesInputProvider implements LabelDataProvider {
     @Override
     public LabelData getLabelData() {
-        Display d = Display.DISPLAY_0ABE5B6D74D4_35;
+        Display d = Display.DISPLAY_0AC0F23A70D8_16;
         return new LabelData(
                 d.getDisplayId(),
                 d.getWidth(),
                 d.getHeight(),
-                "Jacobs Kaffee",
-                new BigDecimal("3.99"));
+                "Kaffee",
+                new BigDecimal("8.99"));
     }
 }

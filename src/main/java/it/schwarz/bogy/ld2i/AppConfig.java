@@ -23,22 +23,26 @@ public class AppConfig {
     @Value("${it.schwarz.output-server}")
     private String outputServer;
 
+    // Input
     // NONE = CLI
     // SERVLET = WEB
-    public static final WebApplicationType WEB_APPLICATION_TYPE =  WebApplicationType.SERVLET; // NONE, SERVLET
+    public static final WebApplicationType WEB_APPLICATION_TYPE =  WebApplicationType.NONE; // NONE, SERVLET
 
     @Bean
     LabelDataProvider getLabelDataProvider() {
         return new FixedValuesInputProvider();
     }
 
+
+
+    // Output
     @Bean
-    @Primary
     OutputProvider getFileOutputProvider() {
         return new FileOutputProvider(new File(outputDirectory));
     }
 
     @Bean
+    @Primary
     OutputProvider getRestfulOutputProvider() {
         return new RestfulOutputProvider(outputServer);
     }
